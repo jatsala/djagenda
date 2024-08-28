@@ -127,6 +127,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Static public <BASE_DIR / "static"> and production <'/var/www/static'> #
+STATICFILES_DIRS = [
+            BASE_DIR / "static",
+            '/var/www/static',
+        ]
+
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
